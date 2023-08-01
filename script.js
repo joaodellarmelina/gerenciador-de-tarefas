@@ -5,51 +5,11 @@ const elementos = {
 
 };
 
-const tarefas = [];
+let tarefas = JSON.parse(localStorage.getItem("@listaTarefas")) || [];
 
-function mostrarTarefa() {
-    elementos.ul.innerHTML = '';
-
-    tarefas.map((todo) => {
-        let li = document.createElement('li');
-
-        let p = document.createElement("p");
-        p.id = "paragrafo"
-        let text = document.createTextNode(todo)
-
-        let button = document.createElement("a");
-        button.appendChild(document.createTextNode('X'));
-        button.onclick = deletarTarefa;
-        button.classList.add("excluir")
-
-
-        elementos.ul.appendChild(li)
-
-        p.appendChild(text);
-        li.appendChild(p);
-        li.appendChild(button)
-
-        function checkTarefas() {
-            if (tarefas.indexOf(todo) != -1) {
-                return true;
-
-            } else {
-                return false;
-            };
-        };
-        function deletarTarefa() {
-            if (checkTarefas) {
-                tarefas.splice(tarefas.indexOf(todo), 1)
-                mostrarTarefa();
-
-            };
-        };
-
-
-
-    });
-};
-
+function salvarDados() {
+    localStorage.setItem("@listaTarefas", JSON.stringify(tarefas))
+}
 
 
 function adionarTarefas() {
@@ -61,7 +21,40 @@ function adionarTarefas() {
         tarefas.push(novatarefa);
         elementos.input.value = '';
         mostrarTarefa()
+        salvarDados()
     }
 };
 
 elementos.button.onclick = adionarTarefas;
+
+function mostrarTarefa() {
+    elementos.ul.innerHTML = '';
+
+    tarefas.map((todo) => {
+        let li = document.createElement('li');
+
+        let p = document.createElement("p");
+        p.id = "paragrafo"
+        let text = document.createTextNode(todo)
+
+        let a = document.createElement("a");
+        a.appendChild(document.createTextNode('X'));
+        a.setAttribute("href", "#");
+        a.onclick = deletarTarefa;
+        a.classList.add("excluir")
+
+        elementos.ul.appendChild(li)
+
+        p.appendChild(text);
+        li.appendChild(p);
+        li.appendChild(a)
+
+        function deletarTarefa() {
+            tarefas.splice(tarefas.indexOf(todo), 1)
+            mostrarTarefa();
+            salvarDados()
+        };
+    });
+};
+mostrarTarefa()
+
