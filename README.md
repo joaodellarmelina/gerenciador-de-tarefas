@@ -9,7 +9,3 @@
 <br>
 <br>
 
-![gerenciador](img/gif.gif)
-![code](img/coding.png)
-
-
