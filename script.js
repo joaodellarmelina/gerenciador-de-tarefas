@@ -18,9 +18,9 @@ function mostrarTarefa() {
         let text = document.createTextNode(todo)
 
         let button = document.createElement("a");
-        button.appendChild(document.createTextNode('excluir'));
+        button.appendChild(document.createTextNode('X'));
         button.onclick = deletarTarefa;
-        button.classList.add("botão")
+        button.classList.add("excluir")
 
 
         elementos.ul.appendChild(li)

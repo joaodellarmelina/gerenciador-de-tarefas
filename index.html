@@ -8,42 +8,120 @@
     <title>LISTA DE TAREFAS</title>
     <script src="script.js" defer></script>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        body {
+            background-color: rgba(255, 255, 255, 0.473);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .tarefas {
+            height: 80%;
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        ul {
+            width: 40rem;
+            display: flex;
+            flex-flow: column;
+            gap: 10px;
+        }
+
+        li {
+            height: 0;
+            display: flex;
+            flex-flow: row-reverse;
+            justify-content: space-between;
+        }
+
+
+
+        .input {
+            height: 20%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
         .botão {
             border: none;
             background-color: lightblue;
             border-radius: 5px;
             font-size: 15px;
             cursor: pointer;
+            width: 100px;
+            height: 50px;
         }
+
+        .excluir {
+            border: none;
+            background-color: rgb(255, 255, 255);
+            border-radius: 5px;
+            font-size: 30px;
+            cursor: pointer;
+            height: 20px;
+        }
+
 
         input {
             background-color: rgba(173, 216, 230, 0.349);
             color: black;
             border: 0.1px black solid;
-            width: 200px;
+            width: 400px;
             height: 50px;
             font-size: 20px;
             font-family: sans-serif;
             text-transform: lowercase;
+            margin-right: 20px;
+            text-align: center;
         }
+
+        input:focus {
+            border: none;
+            background-color: rgba(173, 216, 230, 0.315);
+        }
+
+
 
         ul li {
             text-transform: lowercase;
             font-family: sans-serif;
+            font-size: 20px;
             list-style: none;
+            margin: 20px;
         }
     </style>
 
 </head>
 
-<body id="app">
-    <input type="text" placeholder="digite uma tarefa">
-    <button class="botão">registrar</button>
+<body>
+    <div id="app">
 
-    <ul>
+        <div class="tarefas">
+            <ul>
+                <!-- <li>TESTANDO LISTA
+                    <button class="excluir">excluir</button>
+                </li> -->
+            </ul>
+        </div>
 
-    </ul>
+        <div class="input">
+            <input type="text" maxlength="20" placeholder="digite uma tarefa">
+            <button class="botão">registrar</button>
+        </div>
 
+
+    </div>
 </body>
 
 </html>
