@@ -29,10 +29,8 @@ elementos.button.onclick = adionarTarefas;
 
 function mostrarTarefa() {
     elementos.ul.innerHTML = '';
-
     tarefas.map((todo) => {
         let li = document.createElement('li');
-
         let p = document.createElement("p");
         p.id = "paragrafo"
         let text = document.createTextNode(todo)
@@ -57,4 +55,3 @@ function mostrarTarefa() {
     });
 };
 mostrarTarefa()
-

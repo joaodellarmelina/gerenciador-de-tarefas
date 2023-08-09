@@ -1,6 +1,6 @@
  <div align="center">
  <h1 > gerenciador de tarefas </h1> 
- <img src="img/icon.png" width="100px">
+ <img src="img/icon.ico" width="100px">
 
 
 <h4> Básico gerenciador de tarefas que fiz para meus estudos de JavaScript, pretendo melhora-lo futuramente trazendo novas melhorias e funcionalidades. </h4>
